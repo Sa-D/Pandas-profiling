@@ -204,7 +204,7 @@ def to_html(sample, stats_object):
         spearman_matrix = plot.correlation_matrix(stats_object['correlations']['spearman'], 'Spearman')
         correlations_html = templates.template('correlations').render(
             values={'pearson_matrix': pearson_matrix, 'spearman_matrix': spearman_matrix})
-        render_htmls['correlations_html'] = correlations_html
+        render_htmls['correlations_html'] = {{correlations_html}}
 
     # Add sample
     sample_html = templates.template('sample').render(sample_table_html=sample.to_html(classes="sample"))
